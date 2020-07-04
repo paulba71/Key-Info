@@ -32,6 +32,7 @@ struct InfoElement {
 
 class DataModel {
     var model: [InfoElement] = []
+    let defaults = UserDefaults.standard
     
     init() {
         // Load the model from storage
@@ -39,10 +40,6 @@ class DataModel {
         // if there is no model stored - load the default one
         let startingElement: InfoElement = initialModel()
         model = [startingElement]
-    }
-    
-    func loadModel () -> Bool {
-        return true;
     }
     
     func initialModel () -> InfoElement {
@@ -59,10 +56,26 @@ class DataModel {
             if(model.count == 1) {
                 if model[0].data == "Item Value" && model[0].type == "Example element" {
                     model.remove(at: 0)
-                    model.append(element)
-                    // Save the data model to storage
+                    
                 }
             }
+            model.append(element)
+            // Save the data model to storage
+            save()
         }
+    }
+    
+    func load() {
+        // Load the model from storage
+    }
+    
+    func save() {
+        // Save the model to disk
+        let modelDataNew = NSKeyedArchiver.archivedData(withRootObject: model)
+            defaults.set(model, forKey: "dataModel")
+    }
+    
+    func reset() {
+        
     }
 }

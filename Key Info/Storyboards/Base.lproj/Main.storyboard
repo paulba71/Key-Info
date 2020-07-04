@@ -87,7 +87,7 @@
                     <navigationItem key="navigationItem" title="Key Info" id="ByX-dc-YB0">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus.rectangle" catalog="system" id="ZHu-y6-C1P">
                             <connections>
-                                <segue destination="KdV-lA-2h3" kind="presentation" identifier="CreateNewElement" id="H4D-b9-Owi"/>
+                                <segue destination="KdV-lA-2h3" kind="presentation" identifier="CreateNewElement" modalPresentationStyle="fullScreen" id="H4D-b9-Owi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -101,28 +101,28 @@
             <objects>
                 <viewController id="Ms8-f2-CJr" customClass="AddElementViewController" customModule="Key_Info" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Wm-ct-LVk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of the information:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbW-wM-y2P">
-                                <rect key="frame" x="20" y="83" width="374" height="21"/>
+                                <rect key="frame" x="20" y="115" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8AW-0v-u9z">
-                                <rect key="frame" x="20" y="112" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8AW-0v-u9z">
+                                <rect key="frame" x="20" y="144" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixe-zq-hbX">
-                                <rect key="frame" x="20" y="154" width="374" height="21"/>
+                                <rect key="frame" x="20" y="186" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IjJ-DS-TpN">
-                                <rect key="frame" x="20" y="183" width="374" height="43"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="IjJ-DS-TpN">
+                                <rect key="frame" x="20" y="215" width="374" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="2RR-Y2-Qii"/>
                                 </constraints>
@@ -130,23 +130,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLh-wK-xhM">
-                                <rect key="frame" x="20" y="234" width="52" height="21"/>
+                                <rect key="frame" x="20" y="266" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dEM-ZT-jLp">
-                                <rect key="frame" x="87" y="234.5" width="90" height="90"/>
+                                <rect key="frame" x="87" y="266.5" width="90" height="90"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="Evp-e8-aPN"/>
                                     <constraint firstAttribute="width" constant="90" id="hTw-sT-CwX"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Ftq-FV-UnS" appends="YES" id="6md-0K-kDW"/>
-                                    <outletCollection property="gestureRecognizers" destination="Ftq-FV-UnS" appends="YES" id="3u8-rP-bMc"/>
-                                    <outletCollection property="gestureRecognizers" destination="Ftq-FV-UnS" appends="YES" id="uDT-A5-mYu"/>
-                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -178,7 +173,7 @@
                                 <action selector="cancelButtonTapped:" destination="Ms8-f2-CJr" id="4uS-Rs-dZ9"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oaP-by-GrI">
+                        <barButtonItem key="rightBarButtonItem" title="Save" image="folder.fill.badge.plus" catalog="system" id="oaP-by-GrI">
                             <connections>
                                 <action selector="save:" destination="Ms8-f2-CJr" id="Fzc-Qo-LUR"/>
                             </connections>
@@ -191,7 +186,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbA-Zq-MRD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Ftq-FV-UnS"/>
             </objects>
             <point key="canvasLocation" x="2457.971014492754" y="-42.1875"/>
         </scene>
@@ -201,7 +195,7 @@
                 <navigationController id="KdV-lA-2h3" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9Ab-vC-OnG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XsX-v3-dhe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -232,6 +226,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="folder.fill.badge.plus" catalog="system" width="128" height="86"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="plus.rectangle" catalog="system" width="128" height="93"/>
     </resources>
