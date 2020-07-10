@@ -15,35 +15,33 @@ class InfoElement: NSObject, NSCoding, NSSecureCoding {
     
     var type: String
     var data: String
+    var image: String
     //var image: UIImage?
     //var fontSize: Int
     
     override init() {
         type = ""
         data = ""
-        //image = nil
-        //fontSize = 18
+        image = "info.circle"
     }
     
-    init (theType: String, theData: String, theImage: UIImage?, theFontSize: Int?) {
+    init (theType: String, theData: String, theImage: String, theFontSize: Int?) {
         type = theType
         data = theData
-        //image = theImage
-        //fontSize = theFontSize
+        image = theImage
     }
     
     func encode(with coder: NSCoder) {
         coder.encode(type, forKey: "type")
         coder.encode(data, forKey: "data")
-        //coder.encode(image, forKey: "image")
-        //coder.encode(fontSize, forKey: "fontsize")
+        coder.encode(image, forKey: "image")
     }
     
     required init?(coder: NSCoder) {
         self.data = coder.decodeObject(forKey: "data") as! String
         self.type = coder.decodeObject(forKey: "type") as! String
-        //self.fontSize = coder.decodeObject(forKey: "fontsize") as! Int
-        //self.image = coder.decodeObject(forKey: "image") as? UIImage
+        self.image = coder.decodeObject(forKey: "image") as! String
+        //self.image = "info.circle"
     }
 }
 
@@ -61,7 +59,7 @@ class DataModel {
     }
     
     func initialModel () -> InfoElement {
-        let initialElement: InfoElement = InfoElement(theType: "Example element", theData: "Item Value", theImage: nil, theFontSize: 18)
+        let initialElement: InfoElement = InfoElement(theType: "Example element", theData: "Item Value", theImage: "info.circle", theFontSize: 18)
         return initialElement
     }
     

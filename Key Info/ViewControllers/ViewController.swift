@@ -22,6 +22,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "KeyInfoTableViewCell") as! KeyInfoTableViewCell
         cell.typeLabel.text = dataModel.model[indexPath.row].type
         cell.dataLabel.text = dataModel.model[indexPath.row].data
+        let image=UIImage(systemName: dataModel.model[indexPath.row].image)
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.imageView?.image = image
         return cell
     }
     
@@ -47,6 +50,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewWillAppear(_ animated: Bool) {
         print("Back in the main view")
         reloadTable()
+        for cell in table.visibleCells {
+            cell.imageView?.contentMode = .scaleAspectFill
+        }
     }
     
 

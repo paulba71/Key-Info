@@ -28,20 +28,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-Kv-c97">
-                                                    <rect key="frame" x="64" y="19" width="298" height="21"/>
+                                                    <rect key="frame" x="87" y="19" width="275" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g1z-Yd-iip">
-                                                    <rect key="frame" x="9" y="9.5" width="47" height="63"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g1z-Yd-iip">
+                                                    <rect key="frame" x="9" y="9.5" width="70" height="69"/>
+                                                    <color key="backgroundColor" red="1" green="0.031661580940000003" blue="0.12592954740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="47" id="PRB-Ju-uv5"/>
-                                                        <constraint firstAttribute="height" constant="64" id="nHb-ab-LL4"/>
+                                                        <constraint firstAttribute="width" constant="70" id="PRB-Ju-uv5"/>
+                                                        <constraint firstAttribute="height" constant="70" id="nHb-ab-LL4"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I2-Qe-SzU">
-                                                    <rect key="frame" x="64" y="48" width="302" height="41"/>
+                                                    <rect key="frame" x="87" y="48" width="279" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -144,7 +148,7 @@
                                 <state key="normal" title="Change"/>
                                 <connections>
                                     <action selector="changeImage:" destination="Ms8-f2-CJr" eventType="touchUpInside" id="2S7-zw-ntG"/>
-                                    <segue destination="qyA-5X-0f6" kind="show" id="7g3-nV-giA"/>
+                                    <segue destination="qyA-5X-0f6" kind="show" identifier="moveToImageSelector" id="7g3-nV-giA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -204,39 +208,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-s8-7cN">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-s8-7cN">
+                                <rect key="frame" x="10" y="88" width="394" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fw8-DY-GzE">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fw8-DY-GzE">
+                                    <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ImageCell" id="dyc-0t-VCm" customClass="ImageCollectionViewCell" customModule="Key_Info" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ImageCell" id="dyc-0t-VCm" customClass="ImageCollectionViewCell" customModule="Key_Info" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oYp-Xh-iRM">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36i-9y-jn3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="36i-9y-jn3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="164"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="36i-9y-jn3" secondAttribute="trailing" id="4vp-sd-I9j"/>
+                                                <constraint firstItem="36i-9y-jn3" firstAttribute="top" secondItem="oYp-Xh-iRM" secondAttribute="top" id="iyM-p8-xuB"/>
+                                                <constraint firstAttribute="bottom" secondItem="36i-9y-jn3" secondAttribute="bottom" id="snO-hf-y46"/>
+                                                <constraint firstItem="36i-9y-jn3" firstAttribute="leading" secondItem="oYp-Xh-iRM" secondAttribute="leading" id="wde-8d-JCn"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.031661580940000003" blue="0.12592954740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                        <size key="customSize" width="171" height="164"/>
                                         <connections>
                                             <outlet property="imageCell" destination="36i-9y-jn3" id="UUC-Kp-xuU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="qyA-5X-0f6" id="Shh-2h-DvK"/>
+                                    <outlet property="delegate" destination="qyA-5X-0f6" id="c8b-CT-3Nw"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Q4h-s8-7cN" firstAttribute="bottom" secondItem="JPj-7j-iKh" secondAttribute="bottom" id="cXF-Nt-GUz"/>
+                            <constraint firstItem="Q4h-s8-7cN" firstAttribute="top" secondItem="JPj-7j-iKh" secondAttribute="top" id="olm-ki-9Rq"/>
+                            <constraint firstItem="JPj-7j-iKh" firstAttribute="trailing" secondItem="Q4h-s8-7cN" secondAttribute="trailing" constant="10" id="qei-aO-AB1"/>
+                            <constraint firstItem="Q4h-s8-7cN" firstAttribute="leading" secondItem="JPj-7j-iKh" secondAttribute="leading" constant="10" id="uew-CB-nIc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JPj-7j-iKh"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zvn-hj-Nlu"/>
@@ -284,6 +303,7 @@
     <resources>
         <image name="folder.fill.badge.plus" catalog="system" width="128" height="86"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus.rectangle" catalog="system" width="128" height="93"/>
     </resources>
 </document>

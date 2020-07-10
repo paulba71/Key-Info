@@ -11,6 +11,8 @@ import UIKit
 class ImageSelectorViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var images: [UIImage] = []
+    var imageNames: [String] = []
+    var sourceController: AddElementViewController = AddElementViewController()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -20,6 +22,13 @@ class ImageSelectorViewController: UIViewController, UICollectionViewDataSource,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
         cell.imageCell.image = images[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Item is selected - send it back to the main viewcontroller.
+        let selectedImageName = imageNames[indexPath.row]
+        sourceController.imageSelected = selectedImageName
+        self.navigationController?.popViewController(animated: true)
     }
     
 
@@ -32,27 +41,33 @@ class ImageSelectorViewController: UIViewController, UICollectionViewDataSource,
     
     func loadImages(){
         // Setup the images array...
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "multiply.circle.fill")!)
-        images.append(UIImage(systemName: "paperplane.fill")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
-        images.append(UIImage(systemName: "info.circle")!)
+        imageNames.append("info.circle")
+        imageNames.append("multiply.circle.fill")
+        imageNames.append("paperplane.fill")
+        imageNames.append("car")
+        imageNames.append("folder.circle.fill")
+        imageNames.append("creditcard")
+        imageNames.append("book")
+        imageNames.append("book.fill")
+        imageNames.append("house")
+        imageNames.append("briefcase")
+        imageNames.append("paperclip")
+        imageNames.append("command")
+        imageNames.append("rectangle.stack.person.crop")
+        imageNames.append("bolt.fill")
+        imageNames.append("bolt.circle.fill")
+        imageNames.append("person.icloud")
+        imageNames.append("message.circle")
+        imageNames.append("text.bubble")
+        imageNames.append("lock")
+        imageNames.append("map")
+        
+        for imageName in imageNames {
+            images.append(UIImage(systemName: imageName)!)
+        }
     }
+    
+
     
     /*
     // MARK: - Navigation
