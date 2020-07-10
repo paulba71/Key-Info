@@ -38,14 +38,17 @@ class AddElementViewController: UIViewController {
             print("Data not there")
         } else {
             // All ok - lets add to the data
-            var item: InfoElement = InfoElement()
+            let item: InfoElement = InfoElement()
             item.data = dataValue.text!
             item.type = typeValue.text!
-            item.fontSize = 18
-            item.image = nil
+            //item.fontSize = 18
+            //item.image = nil
             dataModel.add(element: item)
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    @IBAction func changeImage(_ sender: Any) {
+        // Open up the image viewer
     }
     
 }

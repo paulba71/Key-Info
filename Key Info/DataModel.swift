@@ -9,24 +9,41 @@
 import Foundation
 import UIKit
 
-struct InfoElement {
+class InfoElement: NSObject, NSCoding, NSSecureCoding {
+    static var supportsSecureCoding: Bool = true
+    
+    
     var type: String
     var data: String
-    var image: UIImage?
-    var fontSize: Int
+    //var image: UIImage?
+    //var fontSize: Int
     
-    init() {
+    override init() {
         type = ""
         data = ""
-        image = nil
-        fontSize = 18
+        //image = nil
+        //fontSize = 18
     }
     
-    init (theType: String, theData: String, theImage: UIImage?, theFontSize: Int) {
+    init (theType: String, theData: String, theImage: UIImage?, theFontSize: Int?) {
         type = theType
         data = theData
-        image = theImage
-        fontSize = theFontSize
+        //image = theImage
+        //fontSize = theFontSize
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(type, forKey: "type")
+        coder.encode(data, forKey: "data")
+        //coder.encode(image, forKey: "image")
+        //coder.encode(fontSize, forKey: "fontsize")
+    }
+    
+    required init?(coder: NSCoder) {
+        self.data = coder.decodeObject(forKey: "data") as! String
+        self.type = coder.decodeObject(forKey: "type") as! String
+        //self.fontSize = coder.decodeObject(forKey: "fontsize") as! Int
+        //self.image = coder.decodeObject(forKey: "image") as? UIImage
     }
 }
 
@@ -40,6 +57,7 @@ class DataModel {
         // if there is no model stored - load the default one
         let startingElement: InfoElement = initialModel()
         model = [startingElement]
+        load()
     }
     
     func initialModel () -> InfoElement {
@@ -65,17 +83,50 @@ class DataModel {
         }
     }
     
+    func remove(at: Int) {
+        model.remove(at: at)
+        if model.count == 0 {
+            let startingElement: InfoElement = initialModel()
+            model = [startingElement]
+        }
+        save()
+    }
+    
     func load() {
         // Load the model from storage
+        guard let modelData = defaults.object(forKey: "InfoData") as? Data else {
+            return
+        }
+        // Use NSKeyedUnarchiver to convert Data / NSData back to Player object
+        guard let localModel = NSKeyedUnarchiver.unarchiveObject(with: modelData) as? [InfoElement] else {
+            return
+        }
+        self.model = localModel
     }
     
     func save() {
         // Save the model to disk
-        let modelDataNew = NSKeyedArchiver.archivedData(withRootObject: model)
-            defaults.set(model, forKey: "dataModel")
+        let modelData = try! NSKeyedArchiver.archivedData(withRootObject: model, requiringSecureCoding: true)
+        UserDefaults.standard.set(modelData, forKey: "InfoData")
     }
     
     func reset() {
         
+    }
+}
+
+extension UserDefaults {
+    func decode<T : Codable>(for type : T.Type, using key : String) -> T? {
+        let defaults = UserDefaults.standard
+        guard let data = defaults.object(forKey: key) as? Data else {return nil}
+        let decodedObject = try? PropertyListDecoder().decode(type, from: data)
+        return decodedObject
+    }
+
+    func encode<T : Codable>(for type : T, using key : String) {
+        let defaults = UserDefaults.standard
+        let encodedData = try? PropertyListEncoder().encode(type)
+        defaults.set(encodedData, forKey: key)
+        defaults.synchronize()
     }
 }

@@ -25,6 +25,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let completeAction = UIContextualAction(style: .destructive, title: "Delete") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
+            
+            self.dataModel.remove(at: indexPath.row)
+            tableView.reloadData()
+            actionPerformed(true)
+        }
+        return UISwipeActionsConfiguration(actions: [completeAction])
+    }
+    
     func reloadTable() {
         table.reloadData()
     }

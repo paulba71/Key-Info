@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA27FDE124B7A2CF0017C738 /* ImageSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27FDE024B7A2CF0017C738 /* ImageSelectorViewController.swift */; };
+		CA27FDE424B7B3A60017C738 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27FDE324B7B3A60017C738 /* ImageCollectionViewCell.swift */; };
 		CA54001324A9616C003FE980 /* KeyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54001224A9616C003FE980 /* KeyInfoTableViewCell.swift */; };
 		CA54001624A9E61F003FE980 /* AddElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54001524A9E61F003FE980 /* AddElementViewController.swift */; };
 		CAE982AF24A8B6480036501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE982AE24A8B6480036501C /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA27FDE024B7A2CF0017C738 /* ImageSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorViewController.swift; sourceTree = "<group>"; };
+		CA27FDE324B7B3A60017C738 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA54001224A9616C003FE980 /* KeyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CA54001524A9E61F003FE980 /* AddElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddElementViewController.swift; sourceTree = "<group>"; };
 		CAE982AB24A8B6480036501C /* Key Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Key Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA27FDE224B7B35B0017C738 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				CA54001224A9616C003FE980 /* KeyInfoTableViewCell.swift */,
+				CA27FDE324B7B3A60017C738 /* ImageCollectionViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		CA54001424A977E7003FE980 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +98,10 @@
 		CAE982C924A945D80036501C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA27FDE224B7B35B0017C738 /* CustomCells */,
 				CAE982B224A8B6480036501C /* ViewController.swift */,
-				CA54001224A9616C003FE980 /* KeyInfoTableViewCell.swift */,
 				CA54001524A9E61F003FE980 /* AddElementViewController.swift */,
+				CA27FDE024B7A2CF0017C738 /* ImageSelectorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -165,8 +179,10 @@
 			files = (
 				CAE982C824A941B30036501C /* DataModel.swift in Sources */,
 				CA54001624A9E61F003FE980 /* AddElementViewController.swift in Sources */,
+				CA27FDE424B7B3A60017C738 /* ImageCollectionViewCell.swift in Sources */,
 				CAE982B324A8B6480036501C /* ViewController.swift in Sources */,
 				CAE982B924A8B6480036501C /* Key_Info.xcdatamodeld in Sources */,
+				CA27FDE124B7A2CF0017C738 /* ImageSelectorViewController.swift in Sources */,
 				CA54001324A9616C003FE980 /* KeyInfoTableViewCell.swift in Sources */,
 				CAE982AF24A8B6480036501C /* AppDelegate.swift in Sources */,
 			);
@@ -244,7 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -298,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
