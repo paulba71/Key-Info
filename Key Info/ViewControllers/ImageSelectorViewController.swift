@@ -61,6 +61,18 @@ class ImageSelectorViewController: UIViewController, UICollectionViewDataSource,
         imageNames.append("text.bubble")
         imageNames.append("lock")
         imageNames.append("map")
+        imageNames.append("location.circle")
+        imageNames.append("person.crop.rectangle")
+        imageNames.append("doc.text.viewfinder")
+        imageNames.append("tv")
+        imageNames.append("person")
+        imageNames.append("phone")
+        imageNames.append("number.square")
+        imageNames.append("staroflife")
+        imageNames.append("wifi")
+        
+        
+        
         
         for imageName in imageNames {
             images.append(UIImage(systemName: imageName)!)

@@ -23,8 +23,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.typeLabel.text = dataModel.model[indexPath.row].type
         cell.dataLabel.text = dataModel.model[indexPath.row].data
         let image=UIImage(systemName: dataModel.model[indexPath.row].image)
-        cell.imageView?.contentMode = .scaleAspectFit
+        
         cell.imageView?.image = image
+        cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+        cell.imageView?.layer.masksToBounds = true
+        
         return cell
     }
     
@@ -63,6 +66,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let navController = segue.destination as! UINavigationController
             let addViewController = navController.viewControllers[0] as! AddElementViewController
             addViewController.dataModel =  dataModel
+        }
+    }
+}
+
+extension UIView
+{
+    func clearSubviews()
+    {
+        for subview in self.subviews as! [UIView] {
+            subview.removeFromSuperview();
         }
     }
 }
