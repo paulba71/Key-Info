@@ -50,11 +50,10 @@ class DataModel {
     let defaults = UserDefaults.standard
     
     init() {
-        // Load the model from storage
-        
-        // if there is no model stored - load the default one
+        // if there is no model stored - intiialise the default one
         let startingElement: InfoElement = initialModel()
         model = [startingElement]
+        // Load the model from storage
         load()
     }
     
@@ -108,8 +107,16 @@ class DataModel {
         UserDefaults.standard.set(modelData, forKey: "InfoData")
     }
     
+    func sortByType () {
+        model.sort {
+            $0.type.lowercased() < $1.type.lowercased()
+        }
+        save()
+    }
+    
     func reset() {
-        
+        let startingElement: InfoElement = initialModel()
+        model = [startingElement]
     }
 }
 

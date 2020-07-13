@@ -17,7 +17,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table = tableView
         return dataModel.model.count
     }
-    
+
+    // Mark: - Tableview code
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "KeyInfoTableViewCell") as! KeyInfoTableViewCell
         cell.typeLabel.text = dataModel.model[indexPath.row].type
@@ -32,33 +33,92 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        // Swipe left to delete
         let completeAction = UIContextualAction(style: .destructive, title: "Delete") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
             
-            self.dataModel.remove(at: indexPath.row)
-            tableView.reloadData()
+            let refreshAlert = UIAlertController(title: "Delete", message: "Are You Sure?", preferredStyle: UIAlertController.Style.alert)
+
+            refreshAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
+                self.dataModel.remove(at: indexPath.row)
+                tableView.reloadData()
+                self.navigationController?.popToRootViewController(animated: true)
+            }))
+
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
+
+                refreshAlert .dismiss(animated: true, completion: nil)
+            }))
+
+            self.present(refreshAlert, animated: true, completion: nil)
+            
+            
             actionPerformed(true)
         }
-        return UISwipeActionsConfiguration(actions: [completeAction])
+        
+        // Swipe left to Edit
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
+            
+            let refreshAlert = UIAlertController(title: "Coming soon", message: "Edit is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
+
+            refreshAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+
+                refreshAlert .dismiss(animated: true, completion: nil)
+            }))
+
+            self.present(refreshAlert, animated: true, completion: nil)
+            actionPerformed(true)
+        }
+        
+        
+        return UISwipeActionsConfiguration(actions: [completeAction, editAction])
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let copyAction = UIContextualAction(style: .normal, title: "Copy") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
+            
+            UIPasteboard.general.string = self.dataModel.model[indexPath.row].data
+            actionPerformed(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [copyAction])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UIPasteboard.general.string = self.dataModel.model[indexPath.row].data
+        let toastMessage = "Copied - (\(self.dataModel.model[indexPath.row].data))"
+        self.showToast(message: toastMessage, font: .systemFont(ofSize: 22.0))
     }
     
     func reloadTable() {
         table.reloadData()
     }
-  
+ 
+    // Mark: - View management
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("Back in the main view")
         reloadTable()
         for cell in table.visibleCells {
             cell.imageView?.contentMode = .scaleAspectFill
         }
     }
     
-
+    // Mark: - Actions
+    @IBAction func sortTable(_ sender: Any) {
+        dataModel.sortByType()
+        reloadTable()
+    }
+    
+    @IBAction func resetData(_ sender: Any) {
+        // ask if the user wants to do this...
+        dataModel.reset()
+        reloadTable()
+    }
+    
+    // Mark: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "CreateNewElement") {
             // The segue moves to a navcontroller which in turn moves to the view we want
@@ -70,13 +130,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-extension UIView
-{
-    func clearSubviews()
-    {
-        for subview in self.subviews as! [UIView] {
-            subview.removeFromSuperview();
-        }
-    }
-}
+// Mark: - Extension to show toast
+// Extension to show a toast like popup...
+extension UIViewController {
+
+func showToast(message : String, font: UIFont) {
+
+    let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 125, y: self.view.frame.size.height-100, width: 250, height: 35))
+    toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+    toastLabel.textColor = UIColor.white
+    toastLabel.font = font
+    toastLabel.textAlignment = .center;
+    toastLabel.text = message
+    toastLabel.alpha = 1.0
+    toastLabel.layer.cornerRadius = 10;
+    toastLabel.clipsToBounds  =  true
+    self.view.addSubview(toastLabel)
+    UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+         toastLabel.alpha = 0.0
+    }, completion: {(isCompleted) in
+        toastLabel.removeFromSuperview()
+    })
+} }
 

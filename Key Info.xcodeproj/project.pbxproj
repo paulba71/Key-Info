@@ -11,6 +11,7 @@
 		CA27FDE424B7B3A60017C738 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27FDE324B7B3A60017C738 /* ImageCollectionViewCell.swift */; };
 		CA54001324A9616C003FE980 /* KeyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54001224A9616C003FE980 /* KeyInfoTableViewCell.swift */; };
 		CA54001624A9E61F003FE980 /* AddElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54001524A9E61F003FE980 /* AddElementViewController.swift */; };
+		CA5CE15924BC7AF7003D49B6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5CE15824BC7AF7003D49B6 /* AboutViewController.swift */; };
 		CAE341C224B9326600D7DA0D /* TypeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE341C124B9326600D7DA0D /* TypeChooserViewController.swift */; };
 		CAE341C424B935DB00D7DA0D /* InfoTypesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE341C324B935DB00D7DA0D /* InfoTypesViewCell.swift */; };
 		CAE982AF24A8B6480036501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE982AE24A8B6480036501C /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		CA27FDE324B7B3A60017C738 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA54001224A9616C003FE980 /* KeyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CA54001524A9E61F003FE980 /* AddElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddElementViewController.swift; sourceTree = "<group>"; };
+		CA5CE15824BC7AF7003D49B6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		CAE341C124B9326600D7DA0D /* TypeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeChooserViewController.swift; sourceTree = "<group>"; };
 		CAE341C324B935DB00D7DA0D /* InfoTypesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTypesViewCell.swift; sourceTree = "<group>"; };
 		CAE982AB24A8B6480036501C /* Key Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Key Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				CA54001524A9E61F003FE980 /* AddElementViewController.swift */,
 				CA27FDE024B7A2CF0017C738 /* ImageSelectorViewController.swift */,
 				CAE341C124B9326600D7DA0D /* TypeChooserViewController.swift */,
+				CA5CE15824BC7AF7003D49B6 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				CAE982C824A941B30036501C /* DataModel.swift in Sources */,
 				CAE341C224B9326600D7DA0D /* TypeChooserViewController.swift in Sources */,
+				CA5CE15924BC7AF7003D49B6 /* AboutViewController.swift in Sources */,
 				CA54001624A9E61F003FE980 /* AddElementViewController.swift in Sources */,
 				CA27FDE424B7B3A60017C738 /* ImageCollectionViewCell.swift in Sources */,
 				CAE982B324A8B6480036501C /* ViewController.swift in Sources */,

@@ -36,8 +36,8 @@ class AddElementViewController: UIViewController {
             print(typeSelected)
             self.typeValue.text = typeSelected
             // set the image too
-            let imageName = mapTypeToImage(type: typeSelected)
-            imageView.image = UIImage(systemName: imageName)
+            imageSelected = mapTypeToImage(type: typeSelected)
+            imageView.image = UIImage(systemName: imageSelected)
             navigatedToTypeSelection = false
         }
     }
@@ -48,9 +48,6 @@ class AddElementViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
-    }
-
     @IBOutlet weak var typeValue: UITextField!
     @IBOutlet weak var dataValue: UITextField!
     
