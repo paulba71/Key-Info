@@ -58,7 +58,7 @@ class AddElementViewController: UIViewController {
             print("Data not there")
         } else {
             // All ok - lets add to the data
-            let item: InfoElement = InfoElement()
+              let item: InfoElement = InfoElement()
             item.data = dataValue.text!
             item.type = typeValue.text!
             item.image = imageSelected

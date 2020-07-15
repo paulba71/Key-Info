@@ -69,11 +69,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             actionPerformed(true)
         }
         
+        // Swipe left to Edit
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
+            
+            let refreshAlert = UIAlertController(title: "Coming soon", message: "Share is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
+
+            refreshAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+
+                refreshAlert .dismiss(animated: true, completion: nil)
+            }))
+
+            self.present(refreshAlert, animated: true, completion: nil)
+            actionPerformed(true)
+        }
         
-        return UISwipeActionsConfiguration(actions: [completeAction, editAction])
+        
+        return UISwipeActionsConfiguration(actions: [completeAction, editAction, shareAction])
     }
     
+    
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        // Swipe right to copy...
         let copyAction = UIContextualAction(style: .normal, title: "Copy") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
             
             UIPasteboard.general.string = self.dataModel.model[indexPath.row].data
@@ -85,7 +101,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIPasteboard.general.string = self.dataModel.model[indexPath.row].data
-        let toastMessage = "Copied - (\(self.dataModel.model[indexPath.row].data))"
+        let toastMessage = "Copied - \"\(self.dataModel.model[indexPath.row].data)\""
         self.showToast(message: toastMessage, font: .systemFont(ofSize: 22.0))
     }
     
@@ -114,8 +130,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func resetData(_ sender: Any) {
         // ask if the user wants to do this...
-        dataModel.reset()
-        reloadTable()
+            
+        let refreshAlert = UIAlertController(title: "Reset", message: "Are You Sure - this will remove all entries and can't be undone?", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
+            self.dataModel.reset()
+            self.reloadTable()
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
+
+            refreshAlert .dismiss(animated: true, completion: nil)
+        }))
+
+        self.present(refreshAlert, animated: true, completion: nil)
+        
     }
     
     // Mark: - Segues
