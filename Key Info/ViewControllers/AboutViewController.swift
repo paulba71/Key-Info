@@ -21,6 +21,12 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         return false;
     }
     
+    @IBOutlet weak var faceIDOption: UISwitch!
+    
+    @IBAction func faceIDToggled(_ sender: Any) {
+    }
+    
+    
     @IBAction func sendFeedback(_ sender: Any) {
         sendEmail()
     }
