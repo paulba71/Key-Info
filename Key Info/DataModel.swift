@@ -16,6 +16,8 @@ class InfoElement: NSObject, NSCoding, NSSecureCoding {
     var type: String
     var data: String
     var image: String
+    var user: String
+    var name: String
     //var image: UIImage?
     //var fontSize: Int
     
@@ -23,24 +25,40 @@ class InfoElement: NSObject, NSCoding, NSSecureCoding {
         type = ""
         data = ""
         image = "info.circle"
+        user = NSUserName()
+        name = ""
     }
     
-    init (theType: String, theData: String, theImage: String, theFontSize: Int?) {
+    init (theType: String, theData: String, theImage: String, theUser: String, theFontSize: Int?) {
         type = theType
         data = theData
         image = theImage
+        user = theUser
+        name = ""
+    }
+
+    init (theType: String, theData: String, theImage: String, theUser: String, theFontSize: Int?, theName: String) {
+        type = theType
+        data = theData
+        image = theImage
+        user = theUser
+        name = theName
     }
     
     func encode(with coder: NSCoder) {
         coder.encode(type, forKey: "type")
         coder.encode(data, forKey: "data")
         coder.encode(image, forKey: "image")
+        coder.encode(user, forKey: "user")
+        coder.encode(name, forKey: "name")
     }
     
     required init?(coder: NSCoder) {
         self.data = coder.decodeObject(forKey: "data") as! String
         self.type = coder.decodeObject(forKey: "type") as! String
         self.image = coder.decodeObject(forKey: "image") as! String
+        self.user = coder.decodeObject(forKey: "user") as! String
+        self.name = coder.decodeObject(forKey: "name") as! String
         //self.image = "info.circle"
     }
 }
@@ -58,7 +76,8 @@ class DataModel {
     }
     
     func initialModel () -> InfoElement {
-        let initialElement: InfoElement = InfoElement(theType: "Example element", theData: "Item Value", theImage: "info.circle", theFontSize: 18)
+        let user = NSUserName()
+        let initialElement: InfoElement = InfoElement (theType: "Example element", theData: "Item Value", theImage: "info.circle", theUser: user, theFontSize: 18, theName: "label")
         return initialElement
     }
     
@@ -99,7 +118,16 @@ class DataModel {
             return
         }
         self.model = localModel
+        //AddUserData()
     }
+
+    //func AddUserData() {
+        // User field was added later - this method will populate it
+    //    let user = NSUserName()
+    //    foreach (element in model) {
+    //        print(element.user, " : ", user)
+    //    }
+    //}
     
     func save() {
         // Save the model to disk

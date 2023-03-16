@@ -69,10 +69,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             actionPerformed(true)
         }
         
-        // Swipe left to Edit
-        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
+        // Swipe left to Hide
+        let shareAction = UIContextualAction(style: .normal, title: "Hide") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
             
-            let refreshAlert = UIAlertController(title: "Coming soon", message: "Share is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
+            let refreshAlert = UIAlertController(title: "Coming soon", message: "Hide is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
 
             refreshAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
 

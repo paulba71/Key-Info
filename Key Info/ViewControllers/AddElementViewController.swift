@@ -38,6 +38,7 @@ class AddElementViewController: UIViewController {
             // set the image too
             imageSelected = mapTypeToImage(type: typeSelected)
             imageView.image = UIImage(systemName: imageSelected)
+            self.personValue.text = NSUserName()
             navigatedToTypeSelection = false
         }
     }
@@ -50,7 +51,8 @@ class AddElementViewController: UIViewController {
     
     @IBOutlet weak var typeValue: UITextField!
     @IBOutlet weak var dataValue: UITextField!
-    
+    @IBOutlet weak var personValue: UITextField!
+
     @IBAction func save(_ sender: Any) {
         if(typeValue.text
         == "" || dataValue.text == "") {
