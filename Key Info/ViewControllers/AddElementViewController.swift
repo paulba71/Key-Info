@@ -22,6 +22,7 @@ class AddElementViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         print("Data model elements \(dataModel.model.count)")
+        self.personValue.text = NSUserName() + "Paul"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,7 +39,6 @@ class AddElementViewController: UIViewController {
             // set the image too
             imageSelected = mapTypeToImage(type: typeSelected)
             imageView.image = UIImage(systemName: imageSelected)
-            self.personValue.text = NSUserName()
             navigatedToTypeSelection = false
         }
     }
@@ -53,6 +53,24 @@ class AddElementViewController: UIViewController {
     @IBOutlet weak var dataValue: UITextField!
     @IBOutlet weak var personValue: UITextField!
 
+    
+    @IBAction func in_body_save_pressed(_ sender: Any) {
+        if(typeValue.text
+        == "" || dataValue.text == "") {
+            // All data not supplied...
+            print("Data not there")
+        } else {
+            // All ok - lets add to the data
+              let item: InfoElement = InfoElement()
+            item.data = dataValue.text!
+            item.type = typeValue.text!
+            item.image = imageSelected
+            item.name = personValue.text!
+            dataModel.add(element: item)
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func save(_ sender: Any) {
         if(typeValue.text
         == "" || dataValue.text == "") {
@@ -64,6 +82,7 @@ class AddElementViewController: UIViewController {
             item.data = dataValue.text!
             item.type = typeValue.text!
             item.image = imageSelected
+            item.name = personValue.text!
             dataModel.add(element: item)
             self.dismiss(animated: true, completion: nil)
         }

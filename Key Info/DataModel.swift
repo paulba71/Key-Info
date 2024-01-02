@@ -18,8 +18,6 @@ class InfoElement: NSObject, NSCoding, NSSecureCoding {
     var image: String
     var user: String
     var name: String
-    //var image: UIImage?
-    //var fontSize: Int
     
     override init() {
         type = ""
@@ -57,9 +55,18 @@ class InfoElement: NSObject, NSCoding, NSSecureCoding {
         self.data = coder.decodeObject(forKey: "data") as! String
         self.type = coder.decodeObject(forKey: "type") as! String
         self.image = coder.decodeObject(forKey: "image") as! String
-        self.user = coder.decodeObject(forKey: "user") as! String
-        self.name = coder.decodeObject(forKey: "name") as! String
+        if coder.containsValue(forKey: "user") {
+            self.user = coder.decodeObject(forKey: "user") as! String
+        }
+        else {
+            self.user=NSUserName()
+        }
+        //self.name = coder.decodeObject(forKey: "name") as! String
+        self.name=""
         //self.image = "info.circle"
+        if self.user == "" {
+            self.user=NSUserName()
+        }
     }
 }
 
@@ -121,13 +128,11 @@ class DataModel {
         //AddUserData()
     }
 
-    //func AddUserData() {
-        // User field was added later - this method will populate it
-    //    let user = NSUserName()
-    //    foreach (element in model) {
-    //        print(element.user, " : ", user)
-    //    }
-    //}
+    // Add the capability to edit an element in a particular position...
+    func Edit(position: Int, element: InfoElement){
+        model.remove(at: position)
+        model.insert(element, at: position)
+    }
     
     func save() {
         // Save the model to disk

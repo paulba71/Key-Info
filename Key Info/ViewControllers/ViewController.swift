@@ -58,14 +58,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Swipe left to Edit
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
             
-            let refreshAlert = UIAlertController(title: "Coming soon", message: "Edit is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
-
+            /*let refreshAlert = UIAlertController(title: "Coming soon", message: "Edit is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
+            
+            
+            
             refreshAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
 
                 refreshAlert .dismiss(animated: true, completion: nil)
             }))
 
-            self.present(refreshAlert, animated: true, completion: nil)
+            self.present(refreshAlert, animated: true, completion: nil)*/
+            
+            // Display the selected index...
+            let selectedItem = "selected index = \(indexPath.row)"
+            let selectAlert = UIAlertController(title: "Selected item", message: selectedItem, preferredStyle: UIAlertController.Style.alert)
+            selectAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+
+                selectAlert .dismiss(animated: true, completion: nil)
+            }))
+
+            self.present(selectAlert, animated: true, completion: nil)
             actionPerformed(true)
         }
         
