@@ -124,6 +124,7 @@ class DataModel {
         save()
     }
 
+    /*
     func remove(section: Int, row: Int) {
         //model.remove(at: at)
         let user = users[section] // can be "" so need to handle that
@@ -144,7 +145,7 @@ class DataModel {
             model = [startingElement]
         }
         save()
-    }
+    } */
 
     func getAbsListIndex (section: Int, row: Int) -> Int {
         let user = users[section] // can be "" so need to handle that
@@ -152,11 +153,11 @@ class DataModel {
         var index = 0
         for element in model {
             if element.user == user {
-                index += 1
                 if index == row {
                     // remove element
                     return absoluteIndex
                 }
+                index += 1
             }
             absoluteIndex += 1
         }
@@ -219,7 +220,6 @@ class DataModel {
             else{
                 currentUserName = element.user
             }
-            print(element.user)
             if !users.contains(currentUserName){
                 users.append(currentUserName)
             }
@@ -241,7 +241,7 @@ class DataModel {
     func GetElementAt(x: Int, y: Int) -> InfoElement{
         let defaultElement = InfoElement()
         let user=users[x]
-        print(user)
+        //print(user)
         var counter=0
         for element in self.model {
             if element.user==user {
@@ -264,6 +264,7 @@ class DataModel {
     
     func save() {
         // Save the model to disk
+        print("Saving data to settings storage")
         let modelData = try! NSKeyedArchiver.archivedData(withRootObject: model, requiringSecureCoding: true)
         UserDefaults.standard.set(modelData, forKey: "InfoData")
     }

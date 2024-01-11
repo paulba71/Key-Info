@@ -47,8 +47,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let refreshAlert = UIAlertController(title: "Delete", message: "Are You Sure?", preferredStyle: UIAlertController.Style.alert)
 
             refreshAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
-                print(self.dataModel.getAbsListIndex(section: indexPath.section, row: indexPath.row))
-                //self.dataModel.remove(at: indexPath.row)
+                //print(self.dataModel.getAbsListIndex(section: indexPath.section, row: indexPath.row))
+                self.dataModel.remove(at: self.dataModel.getAbsListIndex(section: indexPath.section, row: indexPath.row))
                 tableView.reloadData()
                 self.navigationController?.popToRootViewController(animated: true)
             }))
