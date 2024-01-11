@@ -22,7 +22,11 @@ class AddElementViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         print("Data model elements \(dataModel.model.count)")
-        self.personValue.text = NSUserName() + "Paul"
+        var currentSystemUser = NSUserName()
+        if currentSystemUser == "" {
+            currentSystemUser = "Me"
+        }
+        self.personValue.text = currentSystemUser
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,6 +70,7 @@ class AddElementViewController: UIViewController {
             item.type = typeValue.text!
             item.image = imageSelected
             item.name = personValue.text!
+            item.user = personValue.text!
             dataModel.add(element: item)
             self.dismiss(animated: true, completion: nil)
         }
@@ -83,6 +88,7 @@ class AddElementViewController: UIViewController {
             item.type = typeValue.text!
             item.image = imageSelected
             item.name = personValue.text!
+            item.user = personValue.text!
             dataModel.add(element: item)
             self.dismiss(animated: true, completion: nil)
         }

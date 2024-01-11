@@ -8,15 +8,585 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7C688F33-96CA-479A-8DD8-E2A851138D39"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "load()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7C688F33-96CA-479A-8DD8-E2A851138D39 - 59028c1167acf742"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.load() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "7C688F33-96CA-479A-8DD8-E2A851138D39 - 59028c1167acf604"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.load() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA38082A-DB66-474F-931F-2AE0FCC715BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/ViewControllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "tableView(_:titleForHeaderInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "945A740B-262B-4B27-9026-96B52959587D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "BuildUsersList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "945A740B-262B-4B27-9026-96B52959587D - 4da91f7f48c1d83e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.BuildUsersList() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "945A740B-262B-4B27-9026-96B52959587D - 4da91f7f48c1d83e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.BuildUsersList() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "945A740B-262B-4B27-9026-96B52959587D - 4da91f7f48c1d83e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.BuildUsersList() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "945A740B-262B-4B27-9026-96B52959587D - 4da91f7f48c1d87c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.BuildUsersList() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A58039A0-A348-41B9-97B9-C177189F1DF0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "init?(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4573992-5488-4A7E-A170-C7BB350236CE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "encode(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2400F469-A004-45A2-96B5-F59458ECF77A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "add(element:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2400F469-A004-45A2-96B5-F59458ECF77A - 402550275bf410eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.remove(at: Swift.Int) -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "2400F469-A004-45A2-96B5-F59458ECF77A - 6a178b2cbdbee1b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.add(element: Key_Info.InfoElement) -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "296D4836-8FFD-492E-BFC0-7D8F42FA08BE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "add(element:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B1EF308-A28C-41F5-85EF-B21AA964CB31"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Key Info/DataModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "load()"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "reset()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4B1EF308-A28C-41F5-85EF-B21AA964CB31 - 93aeb1c975ce67d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.reset() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "255"
+                  endingLineNumber = "255"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "4B1EF308-A28C-41F5-85EF-B21AA964CB31 - 93aeb1c975ce67b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.reset() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "254"
+                  endingLineNumber = "254"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "4B1EF308-A28C-41F5-85EF-B21AA964CB31 - 93aeb1c975ce64ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.reset() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "263"
+                  endingLineNumber = "263"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "4B1EF308-A28C-41F5-85EF-B21AA964CB31 - 93aeb1c975ce6503"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.reset() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "264"
+                  endingLineNumber = "264"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "4B1EF308-A28C-41F5-85EF-B21AA964CB31 - 93aeb1c975ce6351"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.reset() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282"
+                  offsetFromSymbolStart = "236">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4360F70-995B-4442-ADBE-CE7135D544B0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "CountEntriesForUser(sectionIndex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "699DFEDE-F552-450C-B21F-978D090E827A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/ViewControllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "699DFEDE-F552-450C-B21F-978D090E827A - 765f5c4cd841ea37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.ViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "699DFEDE-F552-450C-B21F-978D090E827A - 765f5c4cd841edf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.ViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  uuid = "699DFEDE-F552-450C-B21F-978D090E827A - 765f5c4cd841edf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.ViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "240">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FF786A5-375E-4128-BE12-E66E5936B42E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "GetElementAt(x:y:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4FF786A5-375E-4128-BE12-E66E5936B42E - 9d3aa032e61808a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.Edit(position: Swift.Int, element: Key_Info.InfoElement) -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "4FF786A5-375E-4128-BE12-E66E5936B42E - 35b5f33484754629"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.GetElementAt(x: Swift.Int, y: Swift.Int) -&gt; Key_Info.InfoElement"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "976CEA14-4113-414E-AF13-6D3BE96B3F76"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "remove(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B7563F2-DC57-4F3C-A28B-E6C73B401867"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/ViewControllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "tableView(_:trailingSwipeActionsConfigurationForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8B7563F2-DC57-4F3C-A28B-E6C73B401867 - 3a65cb7f3e12658e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIAlertAction&gt;) -&gt; () in closure #1 (__C.UIContextualAction, __C.UIView, (Swift.Bool) -&gt; ()) -&gt; () in Key_Info.ViewController.tableView(_: __C.UITableView, trailingSwipeActionsConfigurationForRowAt: Foundation.IndexPath) -&gt; Swift.Optional&lt;__C.UISwipeActionsConfiguration&gt;"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "8B7563F2-DC57-4F3C-A28B-E6C73B401867 - 3a65cb7f3e12644c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIAlertAction&gt;) -&gt; () in closure #1 (__C.UIContextualAction, __C.UIView, (Swift.Bool) -&gt; ()) -&gt; () in Key_Info.ViewController.tableView(_: __C.UITableView, trailingSwipeActionsConfigurationForRowAt: Foundation.IndexPath) -&gt; Swift.Optional&lt;__C.UISwipeActionsConfiguration&gt;"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "516">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E88A8E3-57E7-41FF-84B7-6CA70D62E134"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "setupDummyData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7E88A8E3-57E7-41FF-84B7-6CA70D62E134 - 24c03559269d5174"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.setupDummyData() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "7E88A8E3-57E7-41FF-84B7-6CA70D62E134 - 24c03559269d5174"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Key_Info.DataModel.setupDummyData() -&gt; ()"
+                  moduleName = "Key Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulbarnes/Documents/GitHub/Key-Info/Key-Info/Key%20Info/DataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9569BD4C-B844-40D5-A8D4-57C8EB665F26"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Key Info/DataModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "getAbsListIndex(section:row:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

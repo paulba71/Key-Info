@@ -32,7 +32,7 @@ class InfoElement: NSObject, NSCoding, NSSecureCoding {
         data = theData
         image = theImage
         user = theUser
-        name = ""
+        name = theUser
     }
 
     init (theType: String, theData: String, theImage: String, theUser: String, theFontSize: Int?, theName: String) {
@@ -47,7 +47,7 @@ class InfoElement: NSObject, NSCoding, NSSecureCoding {
         coder.encode(type, forKey: "type")
         coder.encode(data, forKey: "data")
         coder.encode(image, forKey: "image")
-        coder.encode(user, forKey: "user")
+        coder.encode(name, forKey: "user")
         coder.encode(name, forKey: "name")
     }
     
@@ -73,6 +73,8 @@ class InfoElement: NSObject, NSCoding, NSSecureCoding {
 class DataModel {
     var model: [InfoElement] = []
     let defaults = UserDefaults.standard
+    var users: [String] = []
+    
     
     init() {
         // if there is no model stored - intiialise the default one
@@ -80,6 +82,11 @@ class DataModel {
         model = [startingElement]
         // Load the model from storage
         load()
+        /*print("---------------------------------")
+        print("Settings")
+        print("---------------------------------")
+        print(Array(UserDefaults.standard.dictionaryRepresentation()))
+        print("---------------------------------")*/
     }
     
     func initialModel () -> InfoElement {
@@ -103,6 +110,8 @@ class DataModel {
             model.append(element)
             // Save the data model to storage
             save()
+            // Rebuild the users list...
+            BuildUsersList()
         }
     }
     
@@ -114,6 +123,78 @@ class DataModel {
         }
         save()
     }
+
+    func remove(section: Int, row: Int) {
+        //model.remove(at: at)
+        let user = users[section] // can be "" so need to handle that
+        var absoluteIndex = 0
+        var index = 0
+        for element in model {
+            if element.user == user {
+                index += 1
+                if index == row {
+                    // remove element
+                    return
+                }
+            }
+            absoluteIndex += 1
+        }
+        if model.count == 0 {
+            let startingElement: InfoElement = initialModel()
+            model = [startingElement]
+        }
+        save()
+    }
+
+    func getAbsListIndex (section: Int, row: Int) -> Int {
+        let user = users[section] // can be "" so need to handle that
+        var absoluteIndex = 0
+        var index = 0
+        for element in model {
+            if element.user == user {
+                index += 1
+                if index == row {
+                    // remove element
+                    return absoluteIndex
+                }
+            }
+            absoluteIndex += 1
+        }
+        return -1;
+    }
+    
+    func setupDummyData() {
+        model.removeAll()
+        var dummyElement: InfoElement = InfoElement (theType: "Example element1", theData: "Item Value", theImage: "info.circle", theUser: "Mary", theFontSize: 18, theName: "Mary")
+        add(element: dummyElement)
+        save()
+        dummyElement = InfoElement (theType: "Passport", theData: "PDH35345XR", theImage: "book.fill", theUser: "Mary", theFontSize: 18, theName: "Mary")
+        add(element: dummyElement)
+        dummyElement = InfoElement (theType: "Driving License", theData: "DRV10173854", theImage: "briefcase", theUser: "Mary", theFontSize: 18, theName: "Mary")
+        add(element: dummyElement)
+        dummyElement = InfoElement (theType: "Car Reg", theData: "192D82357", theImage: "car", theUser: "Mary", theFontSize: 18, theName: "Mary")
+        add(element: dummyElement)
+        
+        dummyElement = InfoElement (theType: "Example element", theData: "Item Value", theImage: "info.circle", theUser: "Peter", theFontSize: 18, theName: "Peter")
+        add(element: dummyElement)
+        dummyElement = InfoElement (theType: "Passport", theData: "PDH35345XR", theImage: "book.fill", theUser: "Peter", theFontSize: 18, theName: "Peter")
+        add(element: dummyElement)
+        dummyElement = InfoElement (theType: "Driving License", theData: "DRV10173854", theImage: "briefcase", theUser: "Peter", theFontSize: 18, theName: "Peter")
+        add(element: dummyElement)
+        dummyElement = InfoElement (theType: "Car Reg", theData: "192D82357", theImage: "car", theUser: "Peter", theFontSize: 18, theName: "Peter")
+        add(element: dummyElement)
+        
+        dummyElement = InfoElement (theType: "Example element", theData: "Item Value", theImage: "info.circle", theUser: "Aoife", theFontSize: 18, theName: "Aoife")
+        add(element: dummyElement)
+        dummyElement = InfoElement (theType: "Passport", theData: "PDH35345XR", theImage: "book.fill", theUser: "Aoife", theFontSize: 18, theName: "Aoife")
+        add(element: dummyElement)
+        dummyElement = InfoElement (theType: "Driving License", theData: "DRV10173854", theImage: "briefcase", theUser: "Aoife", theFontSize: 18, theName: "Aoife")
+        add(element: dummyElement)
+        dummyElement = InfoElement (theType: "Car Reg", theData: "192D82357", theImage: "car", theUser: "Aoife", theFontSize: 18, theName: "Aoife")
+        add(element: dummyElement)
+        save()
+    }
+    
     
     func load() {
         // Load the model from storage
@@ -125,7 +206,54 @@ class DataModel {
             return
         }
         self.model = localModel
-        //AddUserData()
+        BuildUsersList()
+    }
+    
+    func BuildUsersList(){
+        var currentUserName=NSUserName()
+        users.removeAll()
+        for element in self.model {
+            if element.user == ""{
+                currentUserName = "Me"
+            }
+            else{
+                currentUserName = element.user
+            }
+            print(element.user)
+            if !users.contains(currentUserName){
+                users.append(currentUserName)
+            }
+        }
+        //print(element.user)
+    }
+    
+    func CountEntriesForUser(sectionIndex: Int) -> Int{
+        let userName=self.users[sectionIndex]
+        var counter = 0
+        for element in self.model {
+            if(element.user == userName) {
+                counter+=1
+            }
+        }
+        return counter
+    }
+    
+    func GetElementAt(x: Int, y: Int) -> InfoElement{
+        let defaultElement = InfoElement()
+        let user=users[x]
+        print(user)
+        var counter=0
+        for element in self.model {
+            if element.user==user {
+                if counter==y{
+                    return element
+                }
+                else {
+                    counter+=1
+                }
+            }
+        }
+        return defaultElement
     }
 
     // Add the capability to edit an element in a particular position...
@@ -149,7 +277,11 @@ class DataModel {
     
     func reset() {
         let startingElement: InfoElement = initialModel()
+        model.removeAll()
         model = [startingElement]
+        save()
+        // Rebuild the users list...
+        BuildUsersList()
     }
 }
 

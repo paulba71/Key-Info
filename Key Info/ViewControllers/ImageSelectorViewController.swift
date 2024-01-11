@@ -58,7 +58,7 @@ class ImageSelectorViewController: UIViewController, UICollectionViewDataSource,
         imageNames.append("bolt.circle.fill")
         imageNames.append("person.icloud")
         imageNames.append("message.circle")
-        imageNames.append("text.bubble")
+        imageNames.append("briefcase")
         imageNames.append("lock")
         imageNames.append("map")
         imageNames.append("location.circle")

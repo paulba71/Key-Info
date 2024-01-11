@@ -15,15 +15,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         table = tableView
-        return dataModel.model.count
+        return dataModel.CountEntriesForUser(sectionIndex: section)
+        //return dataModel.model.count
     }
 
     // Mark: - Tableview code
+    // Add the code here to add to the correct section...
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sectionId=indexPath.first
+        let element=dataModel.GetElementAt(x: indexPath.section, y: indexPath.row)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "KeyInfoTableViewCell") as! KeyInfoTableViewCell
-        cell.typeLabel.text = dataModel.model[indexPath.row].type
-        cell.dataLabel.text = dataModel.model[indexPath.row].data
-        let image=UIImage(systemName: dataModel.model[indexPath.row].image)
+        cell.typeLabel.text = element.type
+        cell.dataLabel.text = element.data
+        //cell.typeLabel.text = dataModel.model[indexPath.row].type
+        //cell.dataLabel.text = dataModel.model[indexPath.row].data
+        let image=UIImage(systemName: element.image)
+        //let image=UIImage(systemName: dataModel.model[indexPath.row].image)
         
         cell.imageView?.image = image
         cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
@@ -39,7 +47,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let refreshAlert = UIAlertController(title: "Delete", message: "Are You Sure?", preferredStyle: UIAlertController.Style.alert)
 
             refreshAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
-                self.dataModel.remove(at: indexPath.row)
+                print(self.dataModel.getAbsListIndex(section: indexPath.section, row: indexPath.row))
+                //self.dataModel.remove(at: indexPath.row)
                 tableView.reloadData()
                 self.navigationController?.popToRootViewController(animated: true)
             }))
@@ -58,7 +67,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Swipe left to Edit
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
             
-            /*let refreshAlert = UIAlertController(title: "Coming soon", message: "Edit is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
+            let refreshAlert = UIAlertController(title: "Coming soon", message: "Edit is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
             
             
             
@@ -67,22 +76,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 refreshAlert .dismiss(animated: true, completion: nil)
             }))
 
-            self.present(refreshAlert, animated: true, completion: nil)*/
+            self.present(refreshAlert, animated: true, completion: nil)
             
-            // Display the selected index...
-            let selectedItem = "selected index = \(indexPath.row)"
-            let selectAlert = UIAlertController(title: "Selected item", message: selectedItem, preferredStyle: UIAlertController.Style.alert)
-            selectAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-
-                selectAlert .dismiss(animated: true, completion: nil)
-            }))
-
-            self.present(selectAlert, animated: true, completion: nil)
             actionPerformed(true)
         }
         
         // Swipe left to Hide
-        let shareAction = UIContextualAction(style: .normal, title: "Hide") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
+        /*let shareAction = UIContextualAction(style: .normal, title: "Hide") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
             
             let refreshAlert = UIAlertController(title: "Coming soon", message: "Hide is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
 
@@ -93,12 +93,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
             self.present(refreshAlert, animated: true, completion: nil)
             actionPerformed(true)
-        }
+        }*/
         
         
-        return UISwipeActionsConfiguration(actions: [completeAction, editAction, shareAction])
+        return UISwipeActionsConfiguration(actions: [completeAction, editAction/*, shareAction*/])
     }
     
+    // Adding sections and headers to the table view
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.dataModel.users.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        //return "Paul"
+        return dataModel.users[section]
+    }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // Swipe right to copy...
@@ -110,6 +123,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return UISwipeActionsConfiguration(actions: [copyAction])
     }
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIPasteboard.general.string = self.dataModel.model[indexPath.row].data
@@ -137,6 +152,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Mark: - Actions
     @IBAction func sortTable(_ sender: Any) {
         dataModel.sortByType()
+        reloadTable()
+    }
+    
+    @IBAction func dummyFill(_ sender: Any) {
+        print("dummy data")
+        dataModel.setupDummyData()
         reloadTable()
     }
     
