@@ -156,9 +156,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func dummyFill(_ sender: Any) {
-        print("dummy data")
-        dataModel.setupDummyData()
-        reloadTable()
+        let refreshAlert = UIAlertController(title: "Dummy Data", message: "Are You Sure - this will remove all existing entries and can't be undone?", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
+            print("dummy data")
+            self.dataModel.setupDummyData()
+            self.reloadTable()
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
+
+            refreshAlert .dismiss(animated: true, completion: nil)
+        }))
+
+        self.present(refreshAlert, animated: true, completion: nil)
+        
     }
     
     @IBAction func resetData(_ sender: Any) {
