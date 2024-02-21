@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     // Mark: - Tableview code
-    // Add the code here to add to the correct section...
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionId=indexPath.first
         let element=dataModel.GetElementAt(x: indexPath.section, y: indexPath.row)
@@ -81,19 +81,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             actionPerformed(true)
         }
         
-        // Swipe left to Hide
-        /*let shareAction = UIContextualAction(style: .normal, title: "Hide") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
-            
-            let refreshAlert = UIAlertController(title: "Coming soon", message: "Hide is not implemented just yet. I am working on this and I'll post an update with this enabled very soon.", preferredStyle: UIAlertController.Style.alert)
-
-            refreshAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-
-                refreshAlert .dismiss(animated: true, completion: nil)
-            }))
-
-            self.present(refreshAlert, animated: true, completion: nil)
-            actionPerformed(true)
-        }*/
         
         
         return UISwipeActionsConfiguration(actions: [completeAction, editAction/*, shareAction*/])
@@ -155,11 +142,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         reloadTable()
     }
     
+
     @IBAction func dummyFill(_ sender: Any) {
         let refreshAlert = UIAlertController(title: "Dummy Data", message: "Are You Sure - this will remove all existing entries and can't be undone?", preferredStyle: UIAlertController.Style.alert)
 
         refreshAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
-            print("dummy data")
             self.dataModel.setupDummyData()
             self.reloadTable()
             self.navigationController?.popToRootViewController(animated: true)
