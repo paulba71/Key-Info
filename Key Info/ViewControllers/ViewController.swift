@@ -28,10 +28,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "KeyInfoTableViewCell") as! KeyInfoTableViewCell
         cell.typeLabel.text = element.type
         cell.dataLabel.text = element.data
-        //cell.typeLabel.text = dataModel.model[indexPath.row].type
-        //cell.dataLabel.text = dataModel.model[indexPath.row].data
+
         let image=UIImage(systemName: element.image)
-        //let image=UIImage(systemName: dataModel.model[indexPath.row].image)
         
         cell.imageView?.image = image
         cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
